@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.management.ManagementApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:01:42.445Z" hostname="RubenS" time="2.289">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.management.ManagementApplicationTests" time="2.289"/>
+  <system-out><![CDATA[19:01:36.677 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.management.ManagementApplicationTests]: ManagementApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:01:36.883 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.management.ManagementApplication for test class com.example.management.ManagementApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-02-03T19:01:38.030-05:00  INFO 331 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : Starting ManagementApplicationTests using Java 21.0.9 with PID 331 (started by root in /root/agent_code_generator/workspaces/order_management_workspace/order-management_v2)
+2026-02-03T19:01:38.036-05:00  INFO 331 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2026-02-03T19:01:42.393-05:00  INFO 331 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : Started ManagementApplicationTests in 5.064 seconds (process running for 9.947)
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/root/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
