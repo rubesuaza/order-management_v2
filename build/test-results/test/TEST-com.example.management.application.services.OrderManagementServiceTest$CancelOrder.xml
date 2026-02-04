@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cancelOrder" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:11:08.330Z" hostname="RubenS" time="1.11">
+  <properties/>
+  <testcase name="throwsWhenOrderNotFound()" classname="com.example.management.application.services.OrderManagementServiceTest$CancelOrder" time="1.035"/>
+  <testcase name="cancelsOrderAndSaves()" classname="com.example.management.application.services.OrderManagementServiceTest$CancelOrder" time="0.068"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

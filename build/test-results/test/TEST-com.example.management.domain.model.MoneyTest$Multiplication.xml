@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="multiplication" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:08:06.900Z" hostname="RubenS" time="0.01">
+<testsuite name="multiplication" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:11:09.720Z" hostname="RubenS" time="0.007">
   <properties/>
-  <testcase name="multiplyPreservesCurrency()" classname="com.example.management.domain.model.MoneyTest$Multiplication" time="0.003"/>
-  <testcase name="multipliesByScalar()" classname="com.example.management.domain.model.MoneyTest$Multiplication" time="0.004"/>
+  <testcase name="multiplyPreservesCurrency()" classname="com.example.management.domain.model.MoneyTest$Multiplication" time="0.002"/>
+  <testcase name="multipliesByScalar()" classname="com.example.management.domain.model.MoneyTest$Multiplication" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

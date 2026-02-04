@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="creation" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:08:07.058Z" hostname="RubenS" time="0.023">
+<testsuite name="creation" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:11:09.874Z" hostname="RubenS" time="0.022">
   <properties/>
   <testcase name="cannotCreateWithEmptyItems()" classname="com.example.management.domain.model.OrderTest$Creation" time="0.003"/>
   <testcase name="cannotCreateWithNullItems()" classname="com.example.management.domain.model.OrderTest$Creation" time="0.003"/>
-  <testcase name="createsWithAtLeastOneItemAndCalculatesTotal()" classname="com.example.management.domain.model.OrderTest$Creation" time="0.012"/>
+  <testcase name="createsWithAtLeastOneItemAndCalculatesTotal()" classname="com.example.management.domain.model.OrderTest$Creation" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

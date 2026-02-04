@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.management.ManagementApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:08:05.155Z" hostname="RubenS" time="1.619">
+<testsuite name="com.example.management.ManagementApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:11:06.310Z" hostname="RubenS" time="1.99">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.management.ManagementApplicationTests" time="1.619"/>
-  <system-out><![CDATA[19:08:01.118 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.management.ManagementApplicationTests]: ManagementApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:08:01.430 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.management.ManagementApplication for test class com.example.management.ManagementApplicationTests
+  <testcase name="contextLoads()" classname="com.example.management.ManagementApplicationTests" time="1.99"/>
+  <system-out><![CDATA[19:11:02.269 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.management.ManagementApplicationTests]: ManagementApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:11:02.496 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.management.ManagementApplication for test class com.example.management.ManagementApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,9 +13,9 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2026-02-03T19:08:03.184-05:00  INFO 4441 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : Starting ManagementApplicationTests using Java 21.0.9 with PID 4441 (started by root in /root/agent_code_generator/workspaces/order_management_workspace/order-management_v2)
-2026-02-03T19:08:03.212-05:00  INFO 4441 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : No active profile set, falling back to 1 default profile: "default"
-2026-02-03T19:08:05.083-05:00  INFO 4441 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : Started ManagementApplicationTests in 3.254 seconds (process running for 9.786)
+2026-02-03T19:11:03.494-05:00  INFO 6149 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : Starting ManagementApplicationTests using Java 21.0.9 with PID 6149 (started by root in /root/agent_code_generator/workspaces/order_management_workspace/order-management_v2)
+2026-02-03T19:11:03.499-05:00  INFO 6149 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2026-02-03T19:11:06.267-05:00  INFO 6149 --- [management] [    Test worker] c.e.m.ManagementApplicationTests         : Started ManagementApplicationTests in 3.412 seconds (process running for 6.438)
 ]]></system-out>
   <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/home/root/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
