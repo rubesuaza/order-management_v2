@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Maps domain and validation exceptions to HTTP responses. Keeps framework in infrastructure only.
@@ -33,8 +34,10 @@ public class DomainExceptionHandler {
     public ResponseEntity<Map<String, String>> handleValidation(jakarta.validation.ConstraintViolationException ex) {
         String message = ex.getConstraintViolations().stream()
                 .map(v -> v.getPropertyPath() + ": " + v.getMessage())
-                .reduce((a, b) -> a + "; " + b)
-                .orElse("Validation failed");
+                .collect(Collectors.joining("; "));
+        if (message.isEmpty()) {
+            message = "Validation failed";
+        }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", message));
     }
 
@@ -43,8 +46,10 @@ public class DomainExceptionHandler {
             org.springframework.web.bind.MethodArgumentNotValidException ex) {
         String message = ex.getBindingResult().getFieldErrors().stream()
                 .map(e -> e.getField() + ": " + e.getDefaultMessage())
-                .reduce((a, b) -> a + "; " + b)
-                .orElse("Validation failed");
+                .collect(Collectors.joining("; "));
+        if (message.isEmpty()) {
+            message = "Validation failed";
+        }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", message));
     }
 }

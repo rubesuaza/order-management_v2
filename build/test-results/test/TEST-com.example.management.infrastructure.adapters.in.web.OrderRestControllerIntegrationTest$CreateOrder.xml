@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="POST /orders" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:11:12.644Z" hostname="RubenS" time="0.06">
+<testsuite name="POST /orders" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:13:17.765Z" hostname="RubenS" time="0.066">
   <properties/>
-  <testcase name="creates_order_and_returns_201_with_body()" classname="com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$CreateOrder" time="0.029"/>
+  <testcase name="creates_order_and_returns_201_with_body()" classname="com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$CreateOrder" time="0.035"/>
   <testcase name="returns_400_when_no_items()" classname="com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$CreateOrder" time="0.027"/>
-  <system-out><![CDATA[2026-02-03T19:11:12.625-05:00  INFO 6149 --- [management] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$CreateOrder]: CreateOrder does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-02-03T19:11:12.632-05:00  INFO 6149 --- [management] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.management.ManagementApplication for test class com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$CreateOrder
+  <system-out><![CDATA[2026-02-03T19:13:17.750-05:00  INFO 7773 --- [management] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$CreateOrder]: CreateOrder does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-03T19:13:17.757-05:00  INFO 7773 --- [management] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.management.ManagementApplication for test class com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$CreateOrder
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

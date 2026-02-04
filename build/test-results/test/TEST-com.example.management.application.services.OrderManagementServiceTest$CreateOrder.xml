@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="createOrder" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:11:09.655Z" hostname="RubenS" time="0.045">
+<testsuite name="createOrder" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:13:15.707Z" hostname="RubenS" time="0.033">
   <properties/>
-  <testcase name="usesUsdWhenCurrencyIsNull()" classname="com.example.management.application.services.OrderManagementServiceTest$CreateOrder" time="0.017"/>
-  <testcase name="createsOrderWithItemsAndSavesToRepository()" classname="com.example.management.application.services.OrderManagementServiceTest$CreateOrder" time="0.011"/>
-  <testcase name="mapsMultipleItemsCorrectly()" classname="com.example.management.application.services.OrderManagementServiceTest$CreateOrder" time="0.011"/>
+  <testcase name="usesUsdWhenCurrencyIsNull()" classname="com.example.management.application.services.OrderManagementServiceTest$CreateOrder" time="0.011"/>
+  <testcase name="createsOrderWithItemsAndSavesToRepository()" classname="com.example.management.application.services.OrderManagementServiceTest$CreateOrder" time="0.009"/>
+  <testcase name="mapsMultipleItemsCorrectly()" classname="com.example.management.application.services.OrderManagementServiceTest$CreateOrder" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

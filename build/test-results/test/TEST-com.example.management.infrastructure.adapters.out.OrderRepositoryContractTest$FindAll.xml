@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="findAll" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:11:12.713Z" hostname="RubenS" time="0.015">
+<testsuite name="findAll" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:13:17.839Z" hostname="RubenS" time="0.012">
   <properties/>
-  <testcase name="findAll_returns_all_saved_orders()" classname="com.example.management.infrastructure.adapters.out.OrderRepositoryContractTest$FindAll" time="0.01"/>
-  <testcase name="findAll_returns_empty_when_nothing_saved()" classname="com.example.management.infrastructure.adapters.out.OrderRepositoryContractTest$FindAll" time="0.002"/>
+  <testcase name="findAll_returns_all_saved_orders()" classname="com.example.management.infrastructure.adapters.out.OrderRepositoryContractTest$FindAll" time="0.008"/>
+  <testcase name="findAll_returns_empty_when_nothing_saved()" classname="com.example.management.infrastructure.adapters.out.OrderRepositoryContractTest$FindAll" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

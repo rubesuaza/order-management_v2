@@ -59,11 +59,10 @@ public final class Order {
      * Total amount = sum of (unitPrice * quantity) for all items.
      */
     public Money getTotalAmount() {
-        Money total = items.get(0).getLineTotal();
-        for (int i = 1; i < items.size(); i++) {
-            total = total.add(items.get(i).getLineTotal());
-        }
-        return total;
+        return items.stream()
+                .map(OrderItem::getLineTotal)
+                .reduce(Money::add)
+                .orElseThrow(); // invariant: at least one item
     }
 
     /**
@@ -95,12 +94,16 @@ public final class Order {
      * Cancels the order. Allowed only when PENDING or PAID. SHIPPED orders cannot be cancelled.
      */
     public void cancel() {
+        requireCancellable();
+        this.status = OrderStatus.CANCELLED;
+    }
+
+    private void requireCancellable() {
         if (status == OrderStatus.SHIPPED || status == OrderStatus.DELIVERED) {
             throw new InvalidOrderStateException("Order cannot be cancelled when already SHIPPED or DELIVERED");
         }
         if (status == OrderStatus.CANCELLED) {
             throw new InvalidOrderStateException("Order is already CANCELLED");
         }
-        this.status = OrderStatus.CANCELLED;
     }
 }

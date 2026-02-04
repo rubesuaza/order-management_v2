@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "structure_compliance": {
+    "score": 100,
+    "missing_files": []
+  },
+  "domain_compliance": {
+    "score": 100,
+    "missing_entities": [],
+    "notes": "Entidades de dominio alineadas con gestión de pedidos: Order (id, customerId, createdAt, items, status, getTotalAmount), OrderItem (productId, quantity, unitPrice, getLineTotal), Money (amount, currency, add/subtract/multiply), Address (street, city, zipCode, country), OrderStatus (PENDING, PAID, SHIPPED, DELIVERED, CANCELLED). Invariantes implementadas: pedido con al menos un ítem, total = suma lineTotal, mínimo 10.00 para marcar PAID, transiciones de estado (PENDING→PAID→SHIPPED, cancelación solo PENDING/PAID)."
+  },
+  "test_results": {
+    "command_executed": "./gradlew test",
+    "passed": true,
+    "total_tests": 45,
+    "failures": 0,
+    "output_summary": "BUILD SUCCESSFUL. Tests: domain (Address, Money, OrderItem, Order), application (OrderManagementService), infrastructure (OrderRestController integration, OrderRepository contract), ManagementApplicationTests."
+  },
+  "gaps": [
+    {
+      "severity": "low",
+      "category": "documentation",
+      "description": "No existen en el workspace los archivos de definición de arquitectura: /architecture/directory_structure.md, /architecture/domain_definition.md, /architecture/tech_stack.md. La auditoría de estructura y dominio se basó en el código actual y en patrones hexagonales/DDD.",
+      "fix_suggestion": "Opcional: añadir carpeta architecture/ con directory_structure.md, domain_definition.md y tech_stack.md para futuras revisiones formales contra una fuente de verdad explícita."
+    }
+  ],
+  "next_recommended_action": "git_operations"
+}
