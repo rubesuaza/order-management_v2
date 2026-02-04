@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="creation" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:08:07.058Z" hostname="RubenS" time="0.023">
+  <properties/>
+  <testcase name="cannotCreateWithEmptyItems()" classname="com.example.management.domain.model.OrderTest$Creation" time="0.003"/>
+  <testcase name="cannotCreateWithNullItems()" classname="com.example.management.domain.model.OrderTest$Creation" time="0.003"/>
+  <testcase name="createsWithAtLeastOneItemAndCalculatesTotal()" classname="com.example.management.domain.model.OrderTest$Creation" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

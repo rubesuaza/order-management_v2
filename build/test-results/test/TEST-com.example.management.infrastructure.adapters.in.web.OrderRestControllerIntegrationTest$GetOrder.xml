@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GET /orders/{id}" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:08:08.900Z" hostname="RubenS" time="0.026">
+  <properties/>
+  <testcase name="returns_200_and_order_when_found()" classname="com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$GetOrder" time="0.015"/>
+  <testcase name="returns_404_when_not_found()" classname="com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$GetOrder" time="0.008"/>
+  <system-out><![CDATA[2026-02-03T19:08:08.880-05:00  INFO 4441 --- [management] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$GetOrder]: GetOrder does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-03T19:08:08.889-05:00  INFO 4441 --- [management] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.management.ManagementApplication for test class com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$GetOrder
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

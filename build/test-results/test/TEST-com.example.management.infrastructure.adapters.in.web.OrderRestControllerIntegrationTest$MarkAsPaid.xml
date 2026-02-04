@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="POST /orders/{id}/mark-paid" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-04T00:08:08.248Z" hostname="RubenS" time="0.625">
+  <properties/>
+  <testcase name="returns_204_when_success()" classname="com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$MarkAsPaid" time="0.593"/>
+  <testcase name="returns_400_when_total_below_minimum()" classname="com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$MarkAsPaid" time="0.028"/>
+  <system-out><![CDATA[2026-02-03T19:08:07.161-05:00  INFO 4441 --- [management] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$MarkAsPaid]: MarkAsPaid does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-03T19:08:07.168-05:00  INFO 4441 --- [management] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.management.ManagementApplication for test class com.example.management.infrastructure.adapters.in.web.OrderRestControllerIntegrationTest$MarkAsPaid
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-02-03T19:08:07.326-05:00  INFO 4441 --- [management] [    Test worker] a.i.w.OrderRestControllerIntegrationTest : Starting OrderRestControllerIntegrationTest using Java 21.0.9 with PID 4441 (started by root in /root/agent_code_generator/workspaces/order_management_workspace/order-management_v2)
+2026-02-03T19:08:07.327-05:00  INFO 4441 --- [management] [    Test worker] a.i.w.OrderRestControllerIntegrationTest : No active profile set, falling back to 1 default profile: "default"
+2026-02-03T19:08:08.216-05:00  INFO 4441 --- [management] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-02-03T19:08:08.217-05:00  INFO 4441 --- [management] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-02-03T19:08:08.223-05:00  INFO 4441 --- [management] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-02-03T19:08:08.235-05:00  INFO 4441 --- [management] [    Test worker] a.i.w.OrderRestControllerIntegrationTest : Started OrderRestControllerIntegrationTest in 1.047 seconds (process running for 12.938)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
