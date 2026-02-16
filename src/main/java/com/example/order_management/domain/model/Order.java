@@ -49,11 +49,9 @@ public class Order {
      * Calculates the total amount by summing all items' totals.
      */
     private Money calculateTotalAmount() {
-        Money total = new Money(BigDecimal.ZERO, "USD");
-        for (OrderItem item : items) {
-            total = total.add(item.calculateTotal());
-        }
-        return total;
+        return items.stream()
+            .map(OrderItem::calculateTotal)
+            .reduce(new Money(BigDecimal.ZERO, "USD"), Money::add);
     }
     
     /**
@@ -114,5 +112,38 @@ public class Order {
             );
         }
         this.status = OrderStatus.CANCELLED;
+    }
+    
+    /**
+     * Package-private method for reconstructing Order from persistence.
+     * This avoids the need for reflection and maintains encapsulation.
+     */
+    Order(UUID orderId, UUID customerId, List<OrderItem> items, OrderStatus status, 
+          Money totalAmount, LocalDateTime createdAt) {
+        if (orderId == null) {
+            throw new IllegalArgumentException("Order ID cannot be null");
+        }
+        if (customerId == null) {
+            throw new IllegalArgumentException("Customer ID cannot be null");
+        }
+        if (items == null || items.isEmpty()) {
+            throw new DomainException("An Order must have at least one OrderItem");
+        }
+        if (status == null) {
+            throw new IllegalArgumentException("Status cannot be null");
+        }
+        if (totalAmount == null) {
+            throw new IllegalArgumentException("Total amount cannot be null");
+        }
+        if (createdAt == null) {
+            throw new IllegalArgumentException("Created at cannot be null");
+        }
+        
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.items = new ArrayList<>(items);
+        this.status = status;
+        this.totalAmount = totalAmount;
+        this.createdAt = createdAt;
     }
 }

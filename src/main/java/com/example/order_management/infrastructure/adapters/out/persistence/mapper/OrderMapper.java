@@ -47,7 +47,7 @@ public class OrderMapper {
             .map(this::toDomainItem)
             .collect(Collectors.toList());
         
-        // Use package-private reconstruction method if available, otherwise use reflection
+        // Use package-private reconstruction constructor to maintain domain encapsulation
         Order order = reconstructOrder(
             entity.getId(),
             entity.getCustomerId(),
@@ -61,32 +61,12 @@ public class OrderMapper {
     }
     
     /**
-     * Reconstructs an Order from persistence.
-     * Uses reflection to set private fields since domain model doesn't expose a reconstruction constructor.
+     * Reconstructs an Order from persistence using package-private constructor.
+     * This maintains domain model encapsulation and avoids reflection.
      */
     private Order reconstructOrder(UUID orderId, UUID customerId, List<OrderItem> items,
                                    OrderStatus status, Money totalAmount, java.time.LocalDateTime createdAt) {
-        try {
-            // Create order with constructor (sets status to PENDING)
-            Order order = new Order(orderId, customerId, items);
-            
-            // Use reflection to set status, totalAmount, and createdAt
-            java.lang.reflect.Field statusField = Order.class.getDeclaredField("status");
-            statusField.setAccessible(true);
-            statusField.set(order, status);
-            
-            java.lang.reflect.Field totalAmountField = Order.class.getDeclaredField("totalAmount");
-            totalAmountField.setAccessible(true);
-            totalAmountField.set(order, totalAmount);
-            
-            java.lang.reflect.Field createdAtField = Order.class.getDeclaredField("createdAt");
-            createdAtField.setAccessible(true);
-            createdAtField.set(order, createdAt);
-            
-            return order;
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to reconstruct Order from persistence", e);
-        }
+        return new Order(orderId, customerId, items, status, totalAmount, createdAt);
     }
     
     private OrderItemEntity toItemEntity(OrderItem item, OrderEntity order) {
@@ -108,48 +88,5 @@ public class OrderMapper {
     
     private String getOrderCurrency(OrderEntity order) {
         return order != null ? order.getCurrency() : "USD";
-    }
-    
-    private void setOrderStatus(Order order, OrderStatus status) {
-        // Use reflection or package-private method to set status
-        // Since Order.status is private, we'll need to handle this differently
-        // For now, we'll use a workaround by calling the appropriate state transition methods
-        switch (status) {
-            case PENDING:
-                // Already set by constructor
-                break;
-            case PAID:
-                try {
-                    order.markAsPaid();
-                } catch (Exception e) {
-                    // If order cannot be marked as paid, we'll need to handle it
-                    // This is a limitation of the current domain model design
-                }
-                break;
-            case SHIPPED:
-                try {
-                    order.markAsPaid();
-                    order.markAsShipped();
-                } catch (Exception e) {
-                    // Handle exception
-                }
-                break;
-            case DELIVERED:
-                try {
-                    order.markAsPaid();
-                    order.markAsShipped();
-                    order.markAsDelivered();
-                } catch (Exception e) {
-                    // Handle exception
-                }
-                break;
-            case CANCELLED:
-                try {
-                    order.cancel();
-                } catch (Exception e) {
-                    // Handle exception
-                }
-                break;
-        }
     }
 }

@@ -3,13 +3,16 @@ package com.example.order_management.infrastructure.adapters.out.persistence.ent
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -18,7 +21,9 @@ import java.util.UUID;
  */
 @Entity
 @Table(name = "orders")
-@Data
+@Getter
+@Setter
+@ToString(exclude = "items")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -46,4 +51,17 @@ public class OrderEntity {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @Builder.Default
     private List<OrderItemEntity> items = new ArrayList<>();
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderEntity that = (OrderEntity) o;
+        return Objects.equals(id, that.id);
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

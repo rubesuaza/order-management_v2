@@ -33,7 +33,7 @@ public class OrderRepositoryAdapter implements OrderRepository {
     
     @Override
     public Optional<Order> findById(UUID orderId) {
-        return jpaRepository.findById(orderId)
+        return jpaRepository.findByIdWithItems(orderId)
             .map(mapper::toDomain);
     }
 }
