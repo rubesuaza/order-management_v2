@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: order_management
+
+---
+spring:
+  config:
+    activate:
+      on-profile: h2
+  datasource:
+    url: jdbc:h2:mem:orderdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/order_management
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
