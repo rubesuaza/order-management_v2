@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="invariants before PAID" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:43:30" hostname="RubenS" time="0.017">
+  <properties/>
+  <testcase name="can mark as PAID when total is at least 10.00 USD" classname="com.example.order_management.domain.OrderTotalAmountTest$InvariantsBeforePaid" time="0.001"/>
+  <testcase name="cannot mark as PAID if total is less than 10.00 USD" classname="com.example.order_management.domain.OrderTotalAmountTest$InvariantsBeforePaid" time="0.01"/>
+  <testcase name="order must have at least one item" classname="com.example.order_management.domain.OrderTotalAmountTest$InvariantsBeforePaid" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

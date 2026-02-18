@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SHIPPED" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:43:30" hostname="RubenS" time="0.031">
+  <properties/>
+  <testcase name="allowed only from PAID" classname="com.example.order_management.domain.OrderStatusTransitionTest$Shipped" time="0.015"/>
+  <testcase name="not allowed from CANCELLED" classname="com.example.order_management.domain.OrderStatusTransitionTest$Shipped" time="0.006"/>
+  <testcase name="not allowed from PENDING" classname="com.example.order_management.domain.OrderStatusTransitionTest$Shipped" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

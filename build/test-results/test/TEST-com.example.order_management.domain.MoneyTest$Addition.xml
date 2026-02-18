@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="addition" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:43:29" hostname="RubenS" time="0.024">
+  <properties/>
+  <testcase name="adds same currency" classname="com.example.order_management.domain.MoneyTest$Addition" time="0.002"/>
+  <testcase name="throws CurrencyMismatchException when currencies differ" classname="com.example.order_management.domain.MoneyTest$Addition" time="0.02"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
