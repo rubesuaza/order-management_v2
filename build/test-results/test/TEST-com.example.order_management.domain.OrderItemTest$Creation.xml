@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="creation" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:53:20" hostname="RubenS" time="0.021">
+<testsuite name="creation" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:57:18" hostname="RubenS" time="0.036">
   <properties/>
-  <testcase name="creates with valid productId, unitPrice and quantity" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.006"/>
+  <testcase name="creates with valid productId, unitPrice and quantity" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.01"/>
   <testcase name="rejects zero quantity" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.003"/>
-  <testcase name="rejects negative unit price" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.002"/>
-  <testcase name="line total is unitPrice times quantity" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.002"/>
-  <testcase name="rejects negative quantity" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.002"/>
+  <testcase name="rejects negative unit price" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.005"/>
+  <testcase name="line total is unitPrice times quantity" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.003"/>
+  <testcase name="rejects negative quantity" classname="com.example.order_management.domain.OrderItemTest$Creation" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

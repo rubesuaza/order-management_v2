@@ -68,10 +68,14 @@ public final class Order {
         if (status != OrderStatus.PENDING) {
             throw new InvalidOrderStateException("Can only mark as PAID from PENDING");
         }
-        if (getTotalAmount().getAmount().compareTo(MIN_AMOUNT_FOR_PAID) < 0) {
+        if (isBelowMinimumAmountForPaid()) {
             throw new InvalidOrderStateException("Order total must be at least 10.00 USD before marking as PAID");
         }
         status = OrderStatus.PAID;
+    }
+
+    private boolean isBelowMinimumAmountForPaid() {
+        return getTotalAmount().getAmount().compareTo(MIN_AMOUNT_FOR_PAID) < 0;
     }
 
     public void cancel() {

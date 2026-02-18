@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="create" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:53:20" hostname="RubenS" time="0.013">
+<testsuite name="create" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:57:18" hostname="RubenS" time="0.031">
   <properties/>
-  <testcase name="creates order via factory and saves to repository" classname="com.example.order_management.application.services.OrderApplicationServiceTest$Create" time="0.013"/>
+  <testcase name="creates order via factory and saves to repository" classname="com.example.order_management.application.services.OrderApplicationServiceTest$Create" time="0.031"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

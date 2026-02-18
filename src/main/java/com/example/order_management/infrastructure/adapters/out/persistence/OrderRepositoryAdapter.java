@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
@@ -34,7 +33,7 @@ public class OrderRepositoryAdapter implements OrderRepository {
 
     @Override
     public Optional<Order> findById(OrderId orderId) {
-        return jpaRepository.findById(orderId.getValue())
+        return jpaRepository.findByIdWithItems(orderId.getValue())
                 .map(this::toDomain);
     }
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="null validation" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:53:20" hostname="RubenS" time="0.013">
+<testsuite name="null validation" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:57:18" hostname="RubenS" time="0.027">
   <properties/>
   <testcase name="throws when country is null" classname="com.example.order_management.domain.valueobject.AddressTest$NullValidation" time="0.003"/>
-  <testcase name="throws when zipCode is null" classname="com.example.order_management.domain.valueobject.AddressTest$NullValidation" time="0.002"/>
+  <testcase name="throws when zipCode is null" classname="com.example.order_management.domain.valueobject.AddressTest$NullValidation" time="0.007"/>
   <testcase name="throws when city is null" classname="com.example.order_management.domain.valueobject.AddressTest$NullValidation" time="0.002"/>
-  <testcase name="throws when street is null" classname="com.example.order_management.domain.valueobject.AddressTest$NullValidation" time="0.002"/>
+  <testcase name="throws when street is null" classname="com.example.order_management.domain.valueobject.AddressTest$NullValidation" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,0 +1,41 @@
+{
+  "status": "complete",
+  "structure_compliance": {
+    "score": 100,
+    "missing_files": [],
+    "notes": "directory_structure.md no encontrado en el workspace; auditoría basada en layout hexagonal estándar. Existen: application (ports in/out, services), domain (entities, value objects, ports, exceptions), infrastructure (adapters out/persistence, config). Puntos de entrada y config (OrderManagementApplication.java, application.yml) presentes."
+  },
+  "domain_compliance": {
+    "score": 85,
+    "missing_entities": [],
+    "notes": "Order tiene status, items, totalAmount (vía getTotalAmount()), shippingAddress; faltan createdAt y customerId respecto a domain_definition.md. OrderItem tiene productId (String; definición indica UUID), quantity, unitPrice. Money y Address coinciden. OrderStatus implementa PENDING, PAID, SHIPPED, CANCELLED; falta DELIVERED. Reglas de negocio (mínimo 10 USD, al menos un ítem, cantidad > 0, precio no negativo, transiciones CANCELLED/SHIPPED) implementadas. No existe DomainException como base ni InvalidItemException (se usa IllegalArgumentException)."
+  },
+  "test_results": {
+    "command_executed": "./gradlew test",
+    "passed": true,
+    "total_tests": 60,
+    "failures": 0,
+    "output_summary": "BUILD SUCCESSFUL in 14s. 60 tests, 0 failures, 100% successful."
+  },
+  "gaps": [
+    {
+      "severity": "low",
+      "category": "domain",
+      "description": "Order sin atributos createdAt y customerId definidos en domain_definition.md.",
+      "fix_suggestion": "Añadir LocalDateTime createdAt y UUID customerId a la entidad Order si se desea alineación estricta con la definición."
+    },
+    {
+      "severity": "low",
+      "category": "domain",
+      "description": "OrderStatus no incluye valor DELIVERED (definición: PENDING, PAID, SHIPPED, DELIVERED, CANCELLED).",
+      "fix_suggestion": "Añadir DELIVERED al enum y lógica de transición si el flujo de negocio lo requiere."
+    },
+    {
+      "severity": "low",
+      "category": "domain",
+      "description": "business_rules.md menciona DomainException (base) e InvalidItemException; el código usa RuntimeException/IllegalArgumentException.",
+      "fix_suggestion": "Opcional: introducir DomainException como superclase de excepciones de dominio e InvalidItemException para errores de ítem."
+    }
+  ],
+  "next_recommended_action": "git_operations"
+}

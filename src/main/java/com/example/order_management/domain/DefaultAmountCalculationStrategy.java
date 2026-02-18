@@ -14,10 +14,9 @@ public final class DefaultAmountCalculationStrategy implements AmountCalculation
         if (items == null || items.isEmpty()) {
             throw new IllegalArgumentException("At least one item required");
         }
-        Money total = items.get(0).getLineTotal();
-        for (int i = 1; i < items.size(); i++) {
-            total = total.add(items.get(i).getLineTotal());
-        }
-        return total;
+        return items.stream()
+                .map(OrderItem::getLineTotal)
+                .reduce(Money::add)
+                .orElseThrow(() -> new IllegalArgumentException("At least one item required"));
     }
 }
