@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Money" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:43:29" hostname="RubenS" time="0.322">
+<testsuite name="Money" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:53:20" hostname="RubenS" time="0.001">
   <properties/>
-  <testcase name="equals and hashCode by value and currency" classname="com.example.order_management.domain.MoneyTest" time="0.322"/>
+  <testcase name="equals and hashCode by value and currency" classname="com.example.order_management.domain.MoneyTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

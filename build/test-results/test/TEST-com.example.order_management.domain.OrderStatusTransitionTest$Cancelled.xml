@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CANCELLED" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:43:30" hostname="RubenS" time="0.011">
+<testsuite name="CANCELLED" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:53:20" hostname="RubenS" time="0.009">
   <properties/>
   <testcase name="allowed from PAID" classname="com.example.order_management.domain.OrderStatusTransitionTest$Cancelled" time="0.002"/>
   <testcase name="allowed from PENDING" classname="com.example.order_management.domain.OrderStatusTransitionTest$Cancelled" time="0.002"/>
-  <testcase name="not allowed from SHIPPED" classname="com.example.order_management.domain.OrderStatusTransitionTest$Cancelled" time="0.003"/>
+  <testcase name="not allowed from SHIPPED" classname="com.example.order_management.domain.OrderStatusTransitionTest$Cancelled" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

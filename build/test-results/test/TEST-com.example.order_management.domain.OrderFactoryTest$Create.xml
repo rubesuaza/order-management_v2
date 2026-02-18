@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="create" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:53:20" hostname="RubenS" time="0.012">
+  <properties/>
+  <testcase name="creates order with valid id and items" classname="com.example.order_management.domain.OrderFactoryTest$Create" time="0.001"/>
+  <testcase name="throws when items is null" classname="com.example.order_management.domain.OrderFactoryTest$Create" time="0.001"/>
+  <testcase name="throws when id is null" classname="com.example.order_management.domain.OrderFactoryTest$Create" time="0.003"/>
+  <testcase name="throws when items is empty" classname="com.example.order_management.domain.OrderFactoryTest$Create" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

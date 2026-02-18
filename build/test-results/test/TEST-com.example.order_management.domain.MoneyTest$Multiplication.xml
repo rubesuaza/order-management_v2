@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="multiplication" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:43:29" hostname="RubenS" time="0.005">
+<testsuite name="multiplication" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:53:20" hostname="RubenS" time="0.004">
   <properties/>
   <testcase name="multiply by decimal factor" classname="com.example.order_management.domain.MoneyTest$Multiplication" time="0.002"/>
   <testcase name="multiplies amount and keeps currency" classname="com.example.order_management.domain.MoneyTest$Multiplication" time="0.001"/>

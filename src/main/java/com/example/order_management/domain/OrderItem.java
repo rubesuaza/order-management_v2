@@ -24,7 +24,7 @@ public final class OrderItem {
             throw new IllegalArgumentException("Unit price cannot be negative");
         }
         if (quantity <= 0) {
-            throw new IllegalArgumentException("Quantity must be greater than zero");
+            throw new IllegalArgumentException("quantity must be greater than zero");
         }
         return new OrderItem(productId, unitPrice, quantity);
     }

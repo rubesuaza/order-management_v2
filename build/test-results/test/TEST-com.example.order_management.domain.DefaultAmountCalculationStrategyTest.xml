@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DefaultAmountCalculationStrategy" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-02-18T17:53:20" hostname="RubenS" time="0.005">
+  <properties/>
+  <testcase name="single item returns its line total" classname="com.example.order_management.domain.DefaultAmountCalculationStrategyTest" time="0.002"/>
+  <testcase name="multiple items returns sum of line totals" classname="com.example.order_management.domain.DefaultAmountCalculationStrategyTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

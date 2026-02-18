@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - OrderRepositoryAdapterIntegrationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>OrderRepositoryAdapterIntegrationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.order_management.infrastructure.adapters.out.persistence.html">com.example.order_management.infrastructure.adapters.out.persistence</a> &gt; OrderRepositoryAdapterIntegrationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.324s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">findById returns empty when order does not exist</td>
+<td class="success">findById_returnsEmptyWhenNotExists()</td>
+<td class="success">0.023s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findById returns saved order</td>
+<td class="success">findById_returnsSavedOrder()</td>
+<td class="success">0.023s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">save persists order and returns it</td>
+<td class="success">save_persistsOrderAndReturnsIt()</td>
+<td class="success">0.255s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">saved order can be updated and found with new status</td>
+<td class="success">save_updateAndFind_reflectsStatus()</td>
+<td class="success">0.023s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>12:53:18.422 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryAdapterIntegrationTest]: OrderRepositoryAdapterIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:53:18.661 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.order_management.OrderManagementApplication for test class com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryAdapterIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-02-18T12:53:19.419-05:00  INFO 12759 --- [order_management] [    Test worker] .p.OrderRepositoryAdapterIntegrationTest : Starting OrderRepositoryAdapterIntegrationTest using Java 17.0.18 with PID 12759 (started by root in /root/agent_code_generator/workspaces/order_management_java/order-management_v2)
+2026-02-18T12:53:19.422-05:00  INFO 12759 --- [order_management] [    Test worker] .p.OrderRepositoryAdapterIntegrationTest : The following 1 profile is active: &quot;h2&quot;
+2026-02-18T12:53:20.040-05:00  INFO 12759 --- [order_management] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-18T12:53:20.147-05:00  INFO 12759 --- [order_management] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 1 JPA repository interface.
+2026-02-18T12:53:20.251-05:00  INFO 12759 --- [order_management] [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-02-18T12:53:20.546-05:00  INFO 12759 --- [order_management] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:aa29e3b0-dc15-4272-bd11-d55638f4bb06;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-02-18T12:53:21.200-05:00  INFO 12759 --- [order_management] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-18T12:53:21.287-05:00  INFO 12759 --- [order_management] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-02-18T12:53:21.343-05:00  INFO 12759 --- [order_management] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-18T12:53:21.504-05:00  INFO 12759 --- [order_management] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-18T12:53:22.695-05:00  INFO 12759 --- [order_management] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists order_items cascade 
+Hibernate: drop table if exists orders cascade 
+Hibernate: create table order_items (quantity integer not null, unit_price_amount numeric(19,2) not null, unit_price_currency varchar(3) not null, id bigint generated by default as identity, order_id uuid not null, product_id varchar(255) not null, primary key (id))
+Hibernate: create table orders (id uuid not null, shipping_city varchar(255), shipping_country varchar(255), shipping_street varchar(255), shipping_zip_code varchar(255), status varchar(255) not null check (status in ('PENDING','PAID','SHIPPED','CANCELLED')), primary key (id))
+Hibernate: alter table if exists order_items add constraint FKbioxgbv59vetrxe0ejfubep1w foreign key (order_id) references orders
+2026-02-18T12:53:22.784-05:00  INFO 12759 --- [order_management] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-18T12:53:23.267-05:00  INFO 12759 --- [order_management] [    Test worker] .p.OrderRepositoryAdapterIntegrationTest : Started OrderRepositoryAdapterIntegrationTest in 4.504 seconds (process running for 8.5)
+Hibernate: select oe1_0.id,oe1_0.shipping_city,oe1_0.shipping_country,oe1_0.shipping_street,oe1_0.shipping_zip_code,oe1_0.status,i1_0.order_id,i1_0.id,i1_0.product_id,i1_0.quantity,i1_0.unit_price_amount,i1_0.unit_price_currency from orders oe1_0 left join order_items i1_0 on oe1_0.id=i1_0.order_id where oe1_0.id=?
+Hibernate: insert into orders (shipping_city,shipping_country,shipping_street,shipping_zip_code,status,id) values (?,?,?,?,?,?)
+Hibernate: insert into order_items (order_id,product_id,quantity,unit_price_amount,unit_price_currency,id) values (?,?,?,?,?,default)
+Hibernate: select oe1_0.id,oe1_0.shipping_city,oe1_0.shipping_country,oe1_0.shipping_street,oe1_0.shipping_zip_code,oe1_0.status from orders oe1_0 where oe1_0.id=?
+Hibernate: select oe1_0.id,oe1_0.shipping_city,oe1_0.shipping_country,oe1_0.shipping_street,oe1_0.shipping_zip_code,oe1_0.status,i1_0.order_id,i1_0.id,i1_0.product_id,i1_0.quantity,i1_0.unit_price_amount,i1_0.unit_price_currency from orders oe1_0 left join order_items i1_0 on oe1_0.id=i1_0.order_id where oe1_0.id=?
+Hibernate: insert into orders (shipping_city,shipping_country,shipping_street,shipping_zip_code,status,id) values (?,?,?,?,?,?)
+Hibernate: insert into order_items (order_id,product_id,quantity,unit_price_amount,unit_price_currency,id) values (?,?,?,?,?,default)
+Hibernate: select oe1_0.id,oe1_0.shipping_city,oe1_0.shipping_country,oe1_0.shipping_street,oe1_0.shipping_zip_code,oe1_0.status,i1_0.order_id,i1_0.id,i1_0.product_id,i1_0.quantity,i1_0.unit_price_amount,i1_0.unit_price_currency from orders oe1_0 left join order_items i1_0 on oe1_0.id=i1_0.order_id where oe1_0.id=?
+Hibernate: insert into orders (shipping_city,shipping_country,shipping_street,shipping_zip_code,status,id) values (?,?,?,?,?,?)
+Hibernate: insert into order_items (order_id,product_id,quantity,unit_price_amount,unit_price_currency,id) values (?,?,?,?,?,default)
+Hibernate: insert into order_items (order_id,product_id,quantity,unit_price_amount,unit_price_currency,id) values (?,?,?,?,?,default)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.5</a> at Feb 18, 2026, 12:53:23 PM</p>
+</div>
+</div>
+</body>
+</html>
