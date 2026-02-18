@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Money Value Object Tests" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-02-18T15:46:41" hostname="RubenS" time="0.029">
+<testsuite name="Money Value Object Tests" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-02-18T15:57:13" hostname="RubenS" time="0.048">
   <properties/>
-  <testcase name="Should multiply Money correctly" classname="com.example.order_management.domain.model.MoneyTest" time="0.006"/>
-  <testcase name="Should throw exception when adding Money with different currencies" classname="com.example.order_management.domain.model.MoneyTest" time="0.006"/>
-  <testcase name="Should create Money with valid amount and currency" classname="com.example.order_management.domain.model.MoneyTest" time="0.001"/>
-  <testcase name="Should throw exception when comparing Money with different currencies" classname="com.example.order_management.domain.model.MoneyTest" time="0.002"/>
-  <testcase name="Should compare Money values correctly" classname="com.example.order_management.domain.model.MoneyTest" time="0.004"/>
+  <testcase name="Should multiply Money correctly" classname="com.example.order_management.domain.model.MoneyTest" time="0.01"/>
+  <testcase name="Should throw exception when adding Money with different currencies" classname="com.example.order_management.domain.model.MoneyTest" time="0.008"/>
+  <testcase name="Should create Money with valid amount and currency" classname="com.example.order_management.domain.model.MoneyTest" time="0.004"/>
+  <testcase name="Should throw exception when comparing Money with different currencies" classname="com.example.order_management.domain.model.MoneyTest" time="0.004"/>
+  <testcase name="Should compare Money values correctly" classname="com.example.order_management.domain.model.MoneyTest" time="0.007"/>
   <testcase name="Should add Money with same currency correctly" classname="com.example.order_management.domain.model.MoneyTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

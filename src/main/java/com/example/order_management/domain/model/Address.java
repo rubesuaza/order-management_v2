@@ -10,11 +10,23 @@ public final class Address {
     private final String country;
 
     public Address(String street, String city, String state, String zipCode, String country) {
+        validateNotBlank(street, "Street");
+        validateNotBlank(city, "City");
+        validateNotBlank(state, "State");
+        validateNotBlank(zipCode, "Zip code");
+        validateNotBlank(country, "Country");
+
         this.street = street;
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
         this.country = country;
+    }
+
+    private void validateNotBlank(String value, String fieldName) {
+        if (value == null || value.trim().isEmpty()) {
+            throw new IllegalArgumentException(fieldName + " cannot be null or empty.");
+        }
     }
 
     public String getStreet() {

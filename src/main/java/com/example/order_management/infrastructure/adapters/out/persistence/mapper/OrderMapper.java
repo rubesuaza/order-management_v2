@@ -13,7 +13,7 @@ public class OrderMapper {
     public static OrderEntity toEntity(Order order) {
         OrderEntity entity = new OrderEntity(
             order.getId().getValue(),
-            order.getStatus(),
+            order.getStatus().name(),
             order.getShippingAddress() != null ? toAddressEmbeddable(order.getShippingAddress()) : null
         );
         
@@ -33,7 +33,7 @@ public class OrderMapper {
         Order order = Order.of(
             OrderId.of(entity.getId()),
             items,
-            entity.getStatus()
+            OrderStatus.valueOf(entity.getStatus())
         );
         
         if (entity.getShippingAddress() != null) {

@@ -1,8 +1,6 @@
 package com.example.order_management.infrastructure.adapters.out.persistence.entity;
 
 import jakarta.persistence.*;
-import java.math.BigDecimal;
-import java.util.UUID;
 
 @Entity
 @Table(name = "order_items")
@@ -38,10 +36,6 @@ public class OrderItemEntity {
     
     public Long getItemId() {
         return itemId;
-    }
-    
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
     }
     
     public OrderEntity getOrder() {

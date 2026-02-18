@@ -7,7 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.List;
-import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.*;
 

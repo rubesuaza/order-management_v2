@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="OrderRepositoryJpa Integration Tests" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-02-18T15:46:44" hostname="RubenS" time="1.447">
+<testsuite name="OrderRepositoryJpa Integration Tests" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-02-18T15:57:24" hostname="RubenS" time="2.252">
   <properties/>
-  <testcase name="Should save order with shipping address" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="1.237"/>
-  <testcase name="Should find order by id after saving" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.031"/>
-  <testcase name="Should update order status when saving" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.044"/>
-  <testcase name="Should save order successfully" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.025"/>
-  <testcase name="Should calculate total amount correctly after persistence" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.022"/>
-  <testcase name="Should delete order successfully" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.033"/>
-  <testcase name="Should persist order items correctly" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.024"/>
-  <testcase name="Should return empty when order not found" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.011"/>
-  <system-out><![CDATA[10:46:41.759 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest]: OrderRepositoryJpaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-10:46:41.983 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.order_management.OrderManagementApplication for test class com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest
+  <testcase name="Should save order with shipping address" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="1.81"/>
+  <testcase name="Should find order by id after saving" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.04"/>
+  <testcase name="Should update order status when saving" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.142"/>
+  <testcase name="Should save order successfully" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.039"/>
+  <testcase name="Should calculate total amount correctly after persistence" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.034"/>
+  <testcase name="Should delete order successfully" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.072"/>
+  <testcase name="Should persist order items correctly" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.048"/>
+  <testcase name="Should return empty when order not found" classname="com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest" time="0.041"/>
+  <system-out><![CDATA[10:57:13.752 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest]: OrderRepositoryJpaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:57:14.143 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.order_management.OrderManagementApplication for test class com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -20,18 +20,18 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.0)
 
-2026-02-18T10:46:42.671-05:00  INFO 43591 --- [order-management] [    Test worker] c.e.o.i.a.o.p.OrderRepositoryJpaTest     : Starting OrderRepositoryJpaTest using Java 17.0.18 with PID 43591 (started by root in /root/agent_code_generator/workspaces/order_management_workspace/order-management_v2)
-2026-02-18T10:46:42.675-05:00  INFO 43591 --- [order-management] [    Test worker] c.e.o.i.a.o.p.OrderRepositoryJpaTest     : The following 1 profile is active: "dev"
-2026-02-18T10:46:43.270-05:00  INFO 43591 --- [order-management] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-02-18T10:46:43.352-05:00  INFO 43591 --- [order-management] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
-2026-02-18T10:46:43.447-05:00  INFO 43591 --- [order-management] [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2026-02-18T10:46:43.659-05:00  INFO 43591 --- [order-management] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:62d6a026-a7db-477b-8adc-8e98431e35a8;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2026-02-18T10:46:42.477-05:00  INFO 43591 --- [order-management] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-02-18T10:46:42.552-05:00  INFO 43591 --- [order-management] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
-2026-02-18T10:46:42.605-05:00  INFO 43591 --- [order-management] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-02-18T10:46:42.940-05:00  INFO 43591 --- [order-management] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-02-18T10:46:43.006-05:00  WARN 43591 --- [order-management] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2026-02-18T10:46:44.215-05:00  INFO 43591 --- [order-management] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-18T10:57:16.223-05:00  INFO 48273 --- [order-management] [    Test worker] c.e.o.i.a.o.p.OrderRepositoryJpaTest     : Starting OrderRepositoryJpaTest using Java 17.0.18 with PID 48273 (started by root in /root/agent_code_generator/workspaces/order_management_workspace/order-management_v2)
+2026-02-18T10:57:16.230-05:00  INFO 48273 --- [order-management] [    Test worker] c.e.o.i.a.o.p.OrderRepositoryJpaTest     : The following 1 profile is active: "dev"
+2026-02-18T10:57:17.809-05:00  INFO 48273 --- [order-management] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-18T10:57:18.090-05:00  INFO 48273 --- [order-management] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 250 ms. Found 1 JPA repository interface.
+2026-02-18T10:57:18.332-05:00  INFO 48273 --- [order-management] [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2026-02-18T10:57:18.781-05:00  INFO 48273 --- [order-management] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:242c8555-03e7-4f3c-ac30-c1d1e9ea943d;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2026-02-18T10:57:19.733-05:00  INFO 48273 --- [order-management] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-18T10:57:19.961-05:00  INFO 48273 --- [order-management] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-02-18T10:57:20.189-05:00  INFO 48273 --- [order-management] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-18T10:57:20.889-05:00  INFO 48273 --- [order-management] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-18T10:57:20.994-05:00  WARN 48273 --- [order-management] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-18T10:57:23.350-05:00  INFO 48273 --- [order-management] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     drop table if exists order_items cascade 
 Hibernate: 
@@ -49,10 +49,10 @@ Hibernate:
 Hibernate: 
     create table orders (
         id UUID not null,
+        status varchar(32) not null,
         city varchar(255),
         country varchar(255),
         state varchar(255),
-        status varchar(255) not null check (status in ('PENDING','PAID','SHIPPED','CANCELLED')),
         street varchar(255),
         zip_code varchar(255),
         primary key (id)
@@ -62,8 +62,241 @@ Hibernate:
        add constraint FKbioxgbv59vetrxe0ejfubep1w 
        foreign key (order_id) 
        references orders
-2026-02-18T10:46:44.281-05:00  INFO 43591 --- [order-management] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-02-18T10:46:44.761-05:00  INFO 43591 --- [order-management] [    Test worker] c.e.o.i.a.o.p.OrderRepositoryJpaTest     : Started OrderRepositoryJpaTest in 2.649 seconds (process running for 6.745)
+2026-02-18T10:57:23.556-05:00  INFO 48273 --- [order-management] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-18T10:57:24.587-05:00  INFO 48273 --- [order-management] [    Test worker] c.e.o.i.a.o.p.OrderRepositoryJpaTest     : Started OrderRepositoryJpaTest in 10.23 seconds (process running for 15.746)
+Hibernate: 
+    select
+        oe1_0.id,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status,
+        i1_0.order_id,
+        i1_0.item_id,
+        i1_0.product_id,
+        i1_0.quantity,
+        i1_0.amount,
+        i1_0.currency 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.id=i1_0.order_id 
+    where
+        oe1_0.id=?
+Hibernate: 
+    insert 
+    into
+        orders
+        (city, country, state, street, zip_code, status, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_items
+        (order_id, product_id, quantity, amount, currency, item_id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        order_items
+        (order_id, product_id, quantity, amount, currency, item_id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        oe1_0.id,
+        i1_0.order_id,
+        i1_0.item_id,
+        i1_0.product_id,
+        i1_0.quantity,
+        i1_0.amount,
+        i1_0.currency,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.id=i1_0.order_id 
+    where
+        oe1_0.id=?
+Hibernate: 
+    select
+        oe1_0.id,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status,
+        i1_0.order_id,
+        i1_0.item_id,
+        i1_0.product_id,
+        i1_0.quantity,
+        i1_0.amount,
+        i1_0.currency 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.id=i1_0.order_id 
+    where
+        oe1_0.id=?
+Hibernate: 
+    insert 
+    into
+        orders
+        (city, country, state, street, zip_code, status, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_items
+        (order_id, product_id, quantity, amount, currency, item_id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        order_items
+        (order_id, product_id, quantity, amount, currency, item_id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    select
+        oe1_0.id,
+        i1_0.order_id,
+        i1_0.item_id,
+        i1_0.product_id,
+        i1_0.quantity,
+        i1_0.amount,
+        i1_0.currency,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.id=i1_0.order_id 
+    where
+        oe1_0.id=?
+Hibernate: 
+    select
+        oe1_0.id,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status,
+        i1_0.order_id,
+        i1_0.item_id,
+        i1_0.product_id,
+        i1_0.quantity,
+        i1_0.amount,
+        i1_0.currency 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.id=i1_0.order_id 
+    where
+        oe1_0.id=?
+Hibernate: 
+    insert 
+    into
+        orders
+        (city, country, state, street, zip_code, status, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_items
+        (order_id, product_id, quantity, amount, currency, item_id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        order_items
+        (order_id, product_id, quantity, amount, currency, item_id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        order_items
+        (order_id, product_id, quantity, amount, currency, item_id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        order_items
+        (order_id, product_id, quantity, amount, currency, item_id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    update
+        orders 
+    set
+        city=?,
+        country=?,
+        state=?,
+        street=?,
+        zip_code=?,
+        status=? 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        order_items 
+    where
+        item_id=?
+Hibernate: 
+    delete 
+    from
+        order_items 
+    where
+        item_id=?
+Hibernate: 
+    select
+        oe1_0.id,
+        i1_0.order_id,
+        i1_0.item_id,
+        i1_0.product_id,
+        i1_0.quantity,
+        i1_0.amount,
+        i1_0.currency,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.id=i1_0.order_id 
+    where
+        oe1_0.id=?
 Hibernate: 
     select
         oe1_0.id,
@@ -153,6 +386,28 @@ Hibernate:
 Hibernate: 
     select
         oe1_0.id,
+        i1_0.order_id,
+        i1_0.item_id,
+        i1_0.product_id,
+        i1_0.quantity,
+        i1_0.amount,
+        i1_0.currency,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.id=i1_0.order_id 
+    where
+        oe1_0.id=?
+Hibernate: 
+    select
+        oe1_0.id,
         oe1_0.city,
         oe1_0.country,
         oe1_0.state,
@@ -194,19 +449,45 @@ Hibernate:
     values
         (?, ?, ?, ?, ?, default)
 Hibernate: 
-    insert 
-    into
-        order_items
-        (order_id, product_id, quantity, amount, currency, item_id) 
-    values
-        (?, ?, ?, ?, ?, default)
+    delete 
+    from
+        order_items 
+    where
+        item_id=?
 Hibernate: 
-    insert 
-    into
-        order_items
-        (order_id, product_id, quantity, amount, currency, item_id) 
-    values
-        (?, ?, ?, ?, ?, default)
+    delete 
+    from
+        order_items 
+    where
+        item_id=?
+Hibernate: 
+    delete 
+    from
+        orders 
+    where
+        id=?
+Hibernate: 
+    select
+        oe1_0.id,
+        i1_0.order_id,
+        i1_0.item_id,
+        i1_0.product_id,
+        i1_0.quantity,
+        i1_0.amount,
+        i1_0.currency,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.id=i1_0.order_id 
+    where
+        oe1_0.id=?
 Hibernate: 
     select
         oe1_0.id,
@@ -253,18 +534,18 @@ Hibernate:
 Hibernate: 
     select
         oe1_0.id,
-        oe1_0.city,
-        oe1_0.country,
-        oe1_0.state,
-        oe1_0.street,
-        oe1_0.zip_code,
-        oe1_0.status,
         i1_0.order_id,
         i1_0.item_id,
         i1_0.product_id,
         i1_0.quantity,
         i1_0.amount,
-        i1_0.currency 
+        i1_0.currency,
+        oe1_0.city,
+        oe1_0.country,
+        oe1_0.state,
+        oe1_0.street,
+        oe1_0.zip_code,
+        oe1_0.status 
     from
         orders oe1_0 
     left join
@@ -273,127 +554,20 @@ Hibernate:
     where
         oe1_0.id=?
 Hibernate: 
-    insert 
-    into
-        orders
-        (city, country, state, street, zip_code, status, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        order_items
-        (order_id, product_id, quantity, amount, currency, item_id) 
-    values
-        (?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        order_items
-        (order_id, product_id, quantity, amount, currency, item_id) 
-    values
-        (?, ?, ?, ?, ?, default)
-Hibernate: 
     select
         oe1_0.id,
-        oe1_0.city,
-        oe1_0.country,
-        oe1_0.state,
-        oe1_0.street,
-        oe1_0.zip_code,
-        oe1_0.status,
         i1_0.order_id,
         i1_0.item_id,
         i1_0.product_id,
         i1_0.quantity,
         i1_0.amount,
-        i1_0.currency 
-    from
-        orders oe1_0 
-    left join
-        order_items i1_0 
-            on oe1_0.id=i1_0.order_id 
-    where
-        oe1_0.id=?
-Hibernate: 
-    insert 
-    into
-        orders
-        (city, country, state, street, zip_code, status, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        order_items
-        (order_id, product_id, quantity, amount, currency, item_id) 
-    values
-        (?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        order_items
-        (order_id, product_id, quantity, amount, currency, item_id) 
-    values
-        (?, ?, ?, ?, ?, default)
-Hibernate: 
-    select
-        oe1_0.id,
+        i1_0.currency,
         oe1_0.city,
         oe1_0.country,
         oe1_0.state,
         oe1_0.street,
         oe1_0.zip_code,
-        oe1_0.status,
-        i1_0.order_id,
-        i1_0.item_id,
-        i1_0.product_id,
-        i1_0.quantity,
-        i1_0.amount,
-        i1_0.currency 
-    from
-        orders oe1_0 
-    left join
-        order_items i1_0 
-            on oe1_0.id=i1_0.order_id 
-    where
-        oe1_0.id=?
-Hibernate: 
-    insert 
-    into
-        orders
-        (city, country, state, street, zip_code, status, id) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        order_items
-        (order_id, product_id, quantity, amount, currency, item_id) 
-    values
-        (?, ?, ?, ?, ?, default)
-Hibernate: 
-    insert 
-    into
-        order_items
-        (order_id, product_id, quantity, amount, currency, item_id) 
-    values
-        (?, ?, ?, ?, ?, default)
-Hibernate: 
-    select
-        oe1_0.id,
-        oe1_0.city,
-        oe1_0.country,
-        oe1_0.state,
-        oe1_0.street,
-        oe1_0.zip_code,
-        oe1_0.status,
-        i1_0.order_id,
-        i1_0.item_id,
-        i1_0.product_id,
-        i1_0.quantity,
-        i1_0.amount,
-        i1_0.currency 
+        oe1_0.status 
     from
         orders oe1_0 
     left join

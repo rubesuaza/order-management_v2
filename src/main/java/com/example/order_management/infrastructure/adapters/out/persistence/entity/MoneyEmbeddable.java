@@ -3,7 +3,7 @@ package com.example.order_management.infrastructure.adapters.out.persistence.ent
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import java.math.BigDecimal;
-import java.util.Currency;
+import java.util.Objects;
 
 @Embeddable
 public class MoneyEmbeddable {
@@ -37,5 +37,19 @@ public class MoneyEmbeddable {
     
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MoneyEmbeddable that = (MoneyEmbeddable) o;
+        return Objects.equals(amount, that.amount) &&
+               Objects.equals(currency, that.currency);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amount, currency);
     }
 }

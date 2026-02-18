@@ -2,13 +2,15 @@ package com.example.order_management.domain.model;
 
 import com.example.order_management.domain.exception.InvalidOrderStateException;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 public class Order {
+    private static final Money MINIMUM_PAID_AMOUNT =
+        new Money(new java.math.BigDecimal("10.00"), java.util.Currency.getInstance("USD"));
+
     private final OrderId id;
     private final List<OrderItem> items;
     private OrderStatus status;
@@ -62,22 +64,9 @@ public class Order {
     }
 
     public void markAsPaid() {
-        if (status != OrderStatus.PENDING) {
-            throw new InvalidOrderStateException(
-                String.format("Order can only be marked as PAID from PENDING status. Current status: %s", status)
-            );
-        }
-        
+        ensurePendingStatus();
         Money total = getTotalAmount();
-        BigDecimal minimumAmount = new BigDecimal("10.00");
-        
-        if (total.getAmount().compareTo(minimumAmount) < 0) {
-            throw new IllegalStateException(
-                String.format("Order total must be at least 10.00 %s before being marked as PAID. Current total: %s", 
-                    total.getCurrency().getCurrencyCode(), total.getAmount())
-            );
-        }
-        
+        ensureMinimumTotalForPayment(total);
         this.status = OrderStatus.PAID;
     }
 
@@ -91,17 +80,40 @@ public class Order {
     }
 
     public void cancel() {
-        if (status == OrderStatus.SHIPPED) {
+        ensureCancellable();
+        this.status = OrderStatus.CANCELLED;
+    }
+
+    private void ensurePendingStatus() {
+        if (status != OrderStatus.PENDING) {
             throw new InvalidOrderStateException(
-                String.format("Cannot cancel order in status SHIPPED")
+                String.format(
+                    "Order can only be marked as PAID from PENDING status. Current status: %s",
+                    status
+                )
             );
+        }
+    }
+
+    private void ensureMinimumTotalForPayment(Money total) {
+        if (total.getAmount().compareTo(MINIMUM_PAID_AMOUNT.getAmount()) < 0) {
+            throw new IllegalStateException(
+                String.format(
+                    "Order total must be at least 10.00 %s before being marked as PAID. Current total: %s",
+                    total.getCurrency().getCurrencyCode(),
+                    total.getAmount()
+                )
+            );
+        }
+    }
+
+    private void ensureCancellable() {
+        if (status == OrderStatus.SHIPPED) {
+            throw new InvalidOrderStateException("Cannot cancel order in status SHIPPED");
         }
         if (status == OrderStatus.CANCELLED) {
-            throw new InvalidOrderStateException(
-                String.format("Order is already CANCELLED")
-            );
+            throw new InvalidOrderStateException("Order is already CANCELLED");
         }
-        this.status = OrderStatus.CANCELLED;
     }
 
     @Override
