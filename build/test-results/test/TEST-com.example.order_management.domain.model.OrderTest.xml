@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Order Aggregate Root Tests" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-02-18T15:46:41" hostname="RubenS" time="0.072">
+  <properties/>
+  <testcase name="Should transition from PENDING to PAID" classname="com.example.order_management.domain.model.OrderTest" time="0.03"/>
+  <testcase name="Should create Order with at least one item" classname="com.example.order_management.domain.model.OrderTest" time="0.01"/>
+  <testcase name="Should transition from PAID to SHIPPED" classname="com.example.order_management.domain.model.OrderTest" time="0.002"/>
+  <testcase name="Should throw exception when shipping from non-PAID status" classname="com.example.order_management.domain.model.OrderTest" time="0.002"/>
+  <testcase name="Should throw exception when cancelling SHIPPED order" classname="com.example.order_management.domain.model.OrderTest" time="0.002"/>
+  <testcase name="Should transition from PENDING to CANCELLED" classname="com.example.order_management.domain.model.OrderTest" time="0.001"/>
+  <testcase name="Should set shipping address" classname="com.example.order_management.domain.model.OrderTest" time="0.002"/>
+  <testcase name="Should throw exception when marking as PAID with total less than 10.00" classname="com.example.order_management.domain.model.OrderTest" time="0.002"/>
+  <testcase name="Should throw exception when creating Order with empty items" classname="com.example.order_management.domain.model.OrderTest" time="0.002"/>
+  <testcase name="Should calculate total amount correctly" classname="com.example.order_management.domain.model.OrderTest" time="0.001"/>
+  <testcase name="Should transition from PAID to CANCELLED" classname="com.example.order_management.domain.model.OrderTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

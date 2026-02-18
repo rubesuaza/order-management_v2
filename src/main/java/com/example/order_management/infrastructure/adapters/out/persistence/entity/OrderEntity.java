@@ -1,5 +1,6 @@
 package com.example.order_management.infrastructure.adapters.out.persistence.entity;
 
+import com.example.order_management.domain.model.OrderStatus;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class OrderEntity {
     
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private String status;
+    private OrderStatus status;
     
     @Embedded
     private AddressEmbeddable shippingAddress;
@@ -27,7 +28,7 @@ public class OrderEntity {
         // JPA requires no-arg constructor
     }
     
-    public OrderEntity(UUID id, String status, AddressEmbeddable shippingAddress) {
+    public OrderEntity(UUID id, OrderStatus status, AddressEmbeddable shippingAddress) {
         this.id = id;
         this.status = status;
         this.shippingAddress = shippingAddress;
@@ -41,11 +42,11 @@ public class OrderEntity {
         this.id = id;
     }
     
-    public String getStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
     
-    public void setStatus(String status) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
     

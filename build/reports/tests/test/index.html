@@ -20,13 +20,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">8</div>
+<div class="counter">32</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">8</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -38,7 +38,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.012s</div>
+<div class="counter">1.605s</div>
 <p>duration</p>
 </div>
 </td>
@@ -47,8 +47,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -58,53 +58,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Packages</a>
 </li>
 <li>
-<a href="#tab1">Packages</a>
-</li>
-<li>
-<a href="#tab2">Classes</a>
+<a href="#tab1">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<ul class="linkList">
-<li>
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">OrderRepositoryJpa Integration Tests</a>.
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html#shouldCalculateTotalAmountCorrectlyAfterPersistence()">Should calculate total amount correctly after persistence</a>
-</li>
-<li>
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">OrderRepositoryJpa Integration Tests</a>.
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html#shouldDeleteOrderSuccessfully()">Should delete order successfully</a>
-</li>
-<li>
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">OrderRepositoryJpa Integration Tests</a>.
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html#shouldFindOrderByIdAfterSaving()">Should find order by id after saving</a>
-</li>
-<li>
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">OrderRepositoryJpa Integration Tests</a>.
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html#shouldPersistOrderItemsCorrectly()">Should persist order items correctly</a>
-</li>
-<li>
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">OrderRepositoryJpa Integration Tests</a>.
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html#shouldReturnEmptyWhenOrderNotFound()">Should return empty when order not found</a>
-</li>
-<li>
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">OrderRepositoryJpa Integration Tests</a>.
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html#shouldSaveOrderSuccessfully()">Should save order successfully</a>
-</li>
-<li>
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">OrderRepositoryJpa Integration Tests</a>.
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html#shouldSaveOrderWithShippingAddress()">Should save order with shipping address</a>
-</li>
-<li>
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">OrderRepositoryJpa Integration Tests</a>.
-<a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html#shouldUpdateOrderStatusWhenSaving()">Should update order status when saving</a>
-</li>
-</ul>
-</div>
-<div id="tab1" class="tab">
 <h2>Packages</h2>
 <table>
 <thead>
@@ -119,19 +79,29 @@
 </thead>
 <tbody>
 <tr>
-<td class="failures">
+<td class="success">
+<a href="packages/com.example.order_management.domain.model.html">com.example.order_management.domain.model</a>
+</td>
+<td>24</td>
+<td>0</td>
+<td>0</td>
+<td>0.178s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
 <a href="packages/com.example.order_management.infrastructure.adapters.out.persistence.html">com.example.order_management.infrastructure.adapters.out.persistence</a>
 </td>
 <td>8</td>
-<td>8</td>
 <td>0</td>
-<td>0.012s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>1.427s</td>
+<td class="success">100%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Classes</h2>
 <table>
 <thead>
@@ -146,14 +116,54 @@
 </thead>
 <tbody>
 <tr>
-<td class="failures">
+<td class="success">
+<a href="classes/com.example.order_management.domain.model.AddressTest.html">com.example.order_management.domain.model.AddressTest</a>
+</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0.089s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.example.order_management.domain.model.MoneyTest.html">com.example.order_management.domain.model.MoneyTest</a>
+</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0.021s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.example.order_management.domain.model.OrderItemTest.html">com.example.order_management.domain.model.OrderItemTest</a>
+</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0.012s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.example.order_management.domain.model.OrderTest.html">com.example.order_management.domain.model.OrderTest</a>
+</td>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+<td>0.056s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
 <a href="classes/com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest.html">com.example.order_management.infrastructure.adapters.out.persistence.OrderRepositoryJpaTest</a>
 </td>
 <td>8</td>
-<td>8</td>
 <td>0</td>
-<td>0.012s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>1.427s</td>
+<td class="success">100%</td>
 </tr>
 </tbody>
 </table>
@@ -166,7 +176,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at Feb 18, 2026, 10:42:44 AM</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at Feb 18, 2026, 10:46:46 AM</p>
 </div>
 </div>
 </body>
