@@ -37,7 +37,8 @@ public sealed class OrderManagementDbContext : DbContext
             entity.HasMany(e => e.Items)
                 .WithOne(i => i.Order)
                 .HasForeignKey(i => i.OrderId)
-                .IsRequired();
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Restrict);
             // No ON DELETE CASCADE per spec - maintain audit trail
         });
 

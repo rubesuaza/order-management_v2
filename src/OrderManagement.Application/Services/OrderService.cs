@@ -43,11 +43,11 @@ public sealed class OrderService : IOrderService
         }
         catch (InvalidItemException ex)
         {
-            throw new ApplicationValidationException(ex.Message);
+            throw new ApplicationValidationException(ex.Message, ex);
         }
         catch (CurrencyMismatchException ex)
         {
-            throw new ApplicationValidationException(ex.Message);
+            throw new ApplicationValidationException(ex.Message, ex);
         }
     }
 

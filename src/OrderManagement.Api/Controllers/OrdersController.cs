@@ -28,9 +28,6 @@ public class OrdersController : ControllerBase
         [FromBody] CreateOrderRequest request,
         CancellationToken cancellationToken)
     {
-        if (request.Items.Count == 0)
-            return BadRequest(new { error = "Items list cannot be empty." });
-
         var response = await _orderService.CreateOrderAsync(request, cancellationToken);
         return CreatedAtAction(nameof(GetOrder), new { orderId = response.OrderId }, response);
     }

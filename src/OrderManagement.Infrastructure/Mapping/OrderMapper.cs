@@ -55,5 +55,37 @@ public static class OrderMapper
         var total = domain.TotalAmount;
         entity.TotalAmount = total.Amount;
         entity.Currency = total.Currency;
+
+        // Synchronize Items collection to ensure persistence reflects domain state
+        var domainItems = domain.Items.ToList();
+        var entityItems = entity.Items.ToList();
+
+        for (var i = 0; i < domainItems.Count; i++)
+        {
+            var domainItem = domainItems[i];
+            if (i < entityItems.Count)
+            {
+                var existing = entityItems[i];
+                existing.ProductId = domainItem.ProductId;
+                existing.Quantity = domainItem.Quantity;
+                existing.UnitPrice = domainItem.UnitPrice.Amount;
+            }
+            else
+            {
+                entity.Items.Add(new OrderItemEntity
+                {
+                    Id = Guid.NewGuid(),
+                    OrderId = domain.Id,
+                    ProductId = domainItem.ProductId,
+                    Quantity = domainItem.Quantity,
+                    UnitPrice = domainItem.UnitPrice.Amount
+                });
+            }
+        }
+
+        for (var i = entityItems.Count - 1; i >= domainItems.Count; i--)
+        {
+            entity.Items.Remove(entityItems[i]);
+        }
     }
 }
