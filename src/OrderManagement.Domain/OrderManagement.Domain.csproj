@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="OrderManagement.Infrastructure" />
+    <InternalsVisibleTo Include="OrderManagement.Infrastructure.Tests" />
   </ItemGroup>
 
 </Project>

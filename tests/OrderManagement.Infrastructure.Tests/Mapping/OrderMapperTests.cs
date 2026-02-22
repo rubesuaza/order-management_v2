@@ -132,7 +132,7 @@ public class OrderMapperTests
         var customerId = Guid.NewGuid();
         var productId = Guid.NewGuid();
         var item = new OrderItem(productId, 4, new Money(7.50m, "EUR"));
-        var originalOrder = Order.Reconstitute(orderId, customerId, [item], OrderStatus.Shipped, DateTime.UtcNow);
+        var originalOrder = new Order(orderId, customerId, [item], OrderStatus.Shipped, DateTime.UtcNow);
 
         var (orderEntity, itemEntities) = OrderMapper.ToPersistence(originalOrder);
         orderEntity.Items = itemEntities;
