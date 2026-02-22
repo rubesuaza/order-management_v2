@@ -17,6 +17,11 @@ public sealed class Order
     public Money TotalAmount => CalculateTotal();
 
     public Order(Guid id, Guid customerId, IEnumerable<OrderItem> items, DateTime? createdAt = null)
+        : this(id, customerId, items, OrderStatus.Pending, createdAt ?? DateTime.UtcNow)
+    {
+    }
+
+    private Order(Guid id, Guid customerId, IEnumerable<OrderItem> items, OrderStatus status, DateTime createdAt)
     {
         var itemsList = items.ToList();
         if (itemsList.Count == 0)
@@ -26,8 +31,17 @@ public sealed class Order
         Id = id;
         CustomerId = customerId;
         _items.AddRange(itemsList);
-        Status = OrderStatus.Pending;
-        CreatedAt = createdAt ?? DateTime.UtcNow;
+        Status = status;
+        CreatedAt = createdAt;
+    }
+
+    /// <summary>
+    /// Reconstitutes an Order from persistence with the given status.
+    /// Used by Infrastructure layer when loading from database.
+    /// </summary>
+    public static Order Reconstitute(Guid id, Guid customerId, IEnumerable<OrderItem> items, OrderStatus status, DateTime createdAt)
+    {
+        return new Order(id, customerId, items, status, createdAt);
     }
 
     public void MarkAsPaid()
