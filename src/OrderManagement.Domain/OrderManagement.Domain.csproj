@@ -7,4 +7,8 @@
     <RootNamespace>OrderManagement.Domain</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="OrderManagement.Infrastructure" />
+  </ItemGroup>
+
 </Project>

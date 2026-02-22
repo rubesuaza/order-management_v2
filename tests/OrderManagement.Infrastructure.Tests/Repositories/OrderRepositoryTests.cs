@@ -47,7 +47,7 @@ public class OrderRepositoryTests : IDisposable
 
         entity.Should().NotBeNull();
         entity!.CustomerId.Should().Be(customerId);
-        entity.Status.Should().Be(OrderStatus.Pending.ToString());
+        Enum.Parse<OrderStatus>(entity.Status).Should().Be(OrderStatus.Pending);
         entity.TotalAmount.Should().Be(20m);
         entity.Currency.Should().Be("USD");
         entity.Items.Should().HaveCount(1);
@@ -112,6 +112,6 @@ public class OrderRepositoryTests : IDisposable
         // Assert
         var entity = await _context.Orders.FindAsync(orderId);
         entity.Should().NotBeNull();
-        entity!.Status.Should().Be(OrderStatus.Paid.ToString());
+        Enum.Parse<OrderStatus>(entity!.Status).Should().Be(OrderStatus.Paid);
     }
 }

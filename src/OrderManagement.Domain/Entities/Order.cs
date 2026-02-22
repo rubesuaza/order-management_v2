@@ -21,7 +21,7 @@ public sealed class Order
     {
     }
 
-    private Order(Guid id, Guid customerId, IEnumerable<OrderItem> items, OrderStatus status, DateTime createdAt)
+    internal Order(Guid id, Guid customerId, IEnumerable<OrderItem> items, OrderStatus status, DateTime createdAt)
     {
         var itemsList = items.ToList();
         if (itemsList.Count == 0)
@@ -35,15 +35,6 @@ public sealed class Order
         CreatedAt = createdAt;
     }
 
-    /// <summary>
-    /// Reconstitutes an Order from persistence with the given status.
-    /// Used by Infrastructure layer when loading from database.
-    /// </summary>
-    public static Order Reconstitute(Guid id, Guid customerId, IEnumerable<OrderItem> items, OrderStatus status, DateTime createdAt)
-    {
-        return new Order(id, customerId, items, status, createdAt);
-    }
-
     public void MarkAsPaid()
     {
         if (Status != OrderStatus.Pending)
@@ -51,12 +42,14 @@ public sealed class Order
                 $"Order can only be marked as paid when in Pending state. Current: {Status}.");
 
         var total = CalculateTotal();
-        if (total.Amount < MinimumAmountForPayment)
+        if (!MeetsMinimumPaymentRequirement(total))
             throw new InvalidOrderStateException(
                 $"Order total must be at least {MinimumAmountForPayment:N2} USD to be processed. Current: {total.Amount:N2} {total.Currency}.");
 
         Status = OrderStatus.Paid;
     }
+
+    private static bool MeetsMinimumPaymentRequirement(Money total) => total.Amount >= MinimumAmountForPayment;
 
     public void Ship()
     {
@@ -88,10 +81,7 @@ public sealed class Order
     private Money CalculateTotal()
     {
         var firstCurrency = _items[0].UnitPrice.Currency;
-        var total = Money.Zero(firstCurrency);
-        foreach (var item in _items)
-            total = total.Add(item.LineTotal);
-        return total;
+        return _items.Aggregate(Money.Zero(firstCurrency), (acc, item) => acc.Add(item.LineTotal));
     }
 
     private static void EnsureSameCurrency(List<OrderItem> items)
@@ -99,11 +89,9 @@ public sealed class Order
         if (items.Count < 2) return;
 
         var firstCurrency = items[0].UnitPrice.Currency;
-        foreach (var item in items.Skip(1))
-        {
-            if (!string.Equals(firstCurrency, item.UnitPrice.Currency, StringComparison.OrdinalIgnoreCase))
-                throw new CurrencyMismatchException(
-                    $"All items must use the same currency. Found {firstCurrency} and {item.UnitPrice.Currency}.");
-        }
+        var mismatched = items.Skip(1).FirstOrDefault(i => !string.Equals(firstCurrency, i.UnitPrice.Currency, StringComparison.OrdinalIgnoreCase));
+        if (mismatched is not null)
+            throw new CurrencyMismatchException(
+                $"All items must use the same currency. Found {firstCurrency} and {mismatched.UnitPrice.Currency}.");
     }
 }

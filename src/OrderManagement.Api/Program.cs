@@ -1,3 +1,4 @@
+using OrderManagement.Api.Middleware;
 using OrderManagement.Application.Config;
 using OrderManagement.Infrastructure.Config;
 
@@ -21,6 +22,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseAuthorization();
 app.MapControllers();
 

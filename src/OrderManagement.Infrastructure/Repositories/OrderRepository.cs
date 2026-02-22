@@ -24,6 +24,7 @@ public sealed class OrderRepository : IOrderRepository
         var (orderEntity, itemEntities) = OrderMapper.ToPersistence(order);
         await _context.Orders.AddAsync(orderEntity, cancellationToken);
         await _context.OrderItems.AddRangeAsync(itemEntities, cancellationToken);
+        await _context.SaveChangesAsync(cancellationToken);
     }
 
     public async Task<Order?> GetByIdAsync(Guid orderId, CancellationToken cancellationToken = default)
@@ -46,5 +47,6 @@ public sealed class OrderRepository : IOrderRepository
             throw new InvalidOperationException($"Order {order.Id} not found for update.");
 
         OrderMapper.UpdatePersistence(entity, order);
+        await _context.SaveChangesAsync(cancellationToken);
     }
 }

@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using OrderManagement.Application.DTOs;
 using OrderManagement.Application.Services;
-using OrderManagement.Domain.Exceptions;
 
 namespace OrderManagement.Api.Controllers;
 
@@ -32,19 +31,8 @@ public class OrdersController : ControllerBase
         if (request.Items.Count == 0)
             return BadRequest(new { error = "Items list cannot be empty." });
 
-        try
-        {
-            var response = await _orderService.CreateOrderAsync(request, cancellationToken);
-            return CreatedAtAction(nameof(GetOrder), new { orderId = response.OrderId }, response);
-        }
-        catch (InvalidItemException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
-        catch (CurrencyMismatchException ex)
-        {
-            return BadRequest(new { error = ex.Message });
-        }
+        var response = await _orderService.CreateOrderAsync(request, cancellationToken);
+        return CreatedAtAction(nameof(GetOrder), new { orderId = response.OrderId }, response);
     }
 
     /// <summary>
@@ -68,16 +56,9 @@ public class OrdersController : ControllerBase
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     public async Task<IActionResult> PayOrder(Guid orderId, CancellationToken cancellationToken)
     {
-        try
-        {
-            var response = await _orderService.PayOrderAsync(orderId, cancellationToken);
-            if (response is null)
-                return NotFound();
-            return Ok(response);
-        }
-        catch (InvalidOrderStateException ex)
-        {
-            return Conflict(new { error = ex.Message });
-        }
+        var response = await _orderService.PayOrderAsync(orderId, cancellationToken);
+        if (response is null)
+            return NotFound();
+        return Ok(response);
     }
 }

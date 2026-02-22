@@ -17,7 +17,7 @@ public static class OrderMapper
             .ToList();
 
         var status = Enum.Parse<OrderStatus>(entity.Status);
-        return Order.Reconstitute(entity.Id, entity.CustomerId, items, status, entity.CreatedAt);
+        return new Order(entity.Id, entity.CustomerId, items, status, entity.CreatedAt);
     }
 
     public static (OrderEntity OrderEntity, List<OrderItemEntity> ItemEntities) ToPersistence(Order domain)
@@ -36,7 +36,7 @@ public static class OrderMapper
         };
 
         var itemEntities = domain.Items
-            .Select((item, _) => new OrderItemEntity
+            .Select(item => new OrderItemEntity
             {
                 Id = Guid.NewGuid(),
                 OrderId = domain.Id,
