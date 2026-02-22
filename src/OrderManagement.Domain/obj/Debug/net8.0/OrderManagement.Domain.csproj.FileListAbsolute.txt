@@ -1,0 +1,12 @@
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/bin/Debug/net8.0/OrderManagement.Domain.deps.json
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/bin/Debug/net8.0/OrderManagement.Domain.dll
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/bin/Debug/net8.0/OrderManagement.Domain.pdb
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/OrderManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/OrderManagement.Domain.AssemblyInfoInputs.cache
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/OrderManagement.Domain.AssemblyInfo.cs
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/OrderManagement.Domain.csproj.CoreCompileInputs.cache
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/OrderManagement.Domain.sourcelink.json
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/OrderManagement.Domain.dll
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/refint/OrderManagement.Domain.dll
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/OrderManagement.Domain.pdb
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Domain/obj/Debug/net8.0/ref/OrderManagement.Domain.dll

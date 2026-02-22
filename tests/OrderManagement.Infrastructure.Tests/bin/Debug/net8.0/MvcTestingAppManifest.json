@@ -1,0 +1,6 @@
+{
+  "OrderManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/root\/agent_code_generator\/workspaces\/order_management_net\/order-management_v2\/src\/OrderManagement.Api",
+  "OrderManagement.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/root\/agent_code_generator\/workspaces\/order_management_net\/order-management_v2\/src\/OrderManagement.Application",
+  "OrderManagement.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/root\/agent_code_generator\/workspaces\/order_management_net\/order-management_v2\/src\/OrderManagement.Domain",
+  "OrderManagement.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/root\/agent_code_generator\/workspaces\/order_management_net\/order-management_v2\/src\/OrderManagement.Infrastructure"
+}

@@ -1,0 +1,16 @@
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/bin/Debug/net8.0/OrderManagement.Application.deps.json
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/bin/Debug/net8.0/OrderManagement.Application.dll
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/bin/Debug/net8.0/OrderManagement.Application.pdb
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/bin/Debug/net8.0/OrderManagement.Domain.dll
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/bin/Debug/net8.0/OrderManagement.Domain.pdb
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderManagement.Application.csproj.AssemblyReference.cache
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderManagement.Application.AssemblyInfoInputs.cache
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderManagement.Application.AssemblyInfo.cs
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderManagement.Application.csproj.CoreCompileInputs.cache
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderManagement.Application.sourcelink.json
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderMan.B2E1D241.Up2Date
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderManagement.Application.dll
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/refint/OrderManagement.Application.dll
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/OrderManagement.Application.pdb
+/root/agent_code_generator/workspaces/order_management_net/order-management_v2/src/OrderManagement.Application/obj/Debug/net8.0/ref/OrderManagement.Application.dll
