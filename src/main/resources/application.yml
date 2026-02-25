@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: management
+  datasource:
+    url: jdbc:postgresql://localhost:5432/management_db
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+
+---
+spring:
+  config:
+    activate:
+      on-profile: h2
+  datasource:
+    url: jdbc:h2:mem:management;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
