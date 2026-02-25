@@ -41,11 +41,10 @@ public class Order {
     }
 
     private static Money computeTotal(List<OrderItem> items) {
-        Money total = items.get(0).getLineTotal();
-        for (int i = 1; i < items.size(); i++) {
-            total = total.add(items.get(i).getLineTotal());
-        }
-        return total;
+        return items.stream()
+                .map(OrderItem::getLineTotal)
+                .reduce(Money::add)
+                .orElseThrow(() -> new IllegalArgumentException("Order must have at least one item"));
     }
 
     public UUID getOrderId() {
@@ -72,6 +71,22 @@ public class Order {
         return totalAmount;
     }
 
+    private boolean meetsMinimumOrderAmount() {
+        return totalAmount.getAmount().compareTo(MINIMUM_ORDER_AMOUNT) >= 0;
+    }
+
+    private boolean canBeMarkedAsPaid() {
+        return status == OrderStatus.PENDING && meetsMinimumOrderAmount();
+    }
+
+    private boolean canBeCancelled() {
+        return status == OrderStatus.PENDING || status == OrderStatus.PAID;
+    }
+
+    private boolean canBeShipped() {
+        return status == OrderStatus.PAID;
+    }
+
     /**
      * Transition to PAID. Only allowed when PENDING and total >= 10.00 USD.
      */
@@ -80,7 +95,7 @@ public class Order {
             throw new InvalidOrderStateException(
                     "Order can only be marked as paid when status is PENDING; current: " + status);
         }
-        if (totalAmount.getAmount().compareTo(MINIMUM_ORDER_AMOUNT) < 0) {
+        if (!meetsMinimumOrderAmount()) {
             throw new InvalidOrderStateException(
                     "Order total must be at least 10.00 USD to be placed; current: " + totalAmount.getAmount());
         }
@@ -91,12 +106,12 @@ public class Order {
      * Transition to CANCELLED. Only allowed when PENDING or PAID.
      */
     public void cancel() {
-        if (status != OrderStatus.PENDING && status != OrderStatus.PAID) {
-            throw new InvalidOrderStateException(
-                    "Order can only be cancelled when PENDING or PAID; cannot cancel when " + status + " (e.g. SHIPPED)");
-        }
         if (status == OrderStatus.CANCELLED) {
             throw new InvalidOrderStateException("Order is already cancelled");
+        }
+        if (!canBeCancelled()) {
+            throw new InvalidOrderStateException(
+                    "Order can only be cancelled when PENDING or PAID; cannot cancel when " + status + " (e.g. SHIPPED)");
         }
         this.status = OrderStatus.CANCELLED;
     }
@@ -105,7 +120,7 @@ public class Order {
      * Transition to SHIPPED. Only allowed when PAID.
      */
     public void ship() {
-        if (status != OrderStatus.PAID) {
+        if (!canBeShipped()) {
             throw new InvalidOrderStateException(
                     "Order can only be shipped when status is PAID; current: " + status);
         }

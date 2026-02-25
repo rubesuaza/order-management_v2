@@ -3,6 +3,7 @@ package com.example.management.domain.valueobject;
 import com.example.management.domain.exception.CurrencyMismatchException;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Objects;
 
 /**
@@ -24,7 +25,7 @@ public final class Money {
         if (amount == null || amount.compareTo(BigDecimal.ZERO) < 0) {
             throw new IllegalArgumentException("Amount must be non-negative");
         }
-        this.amount = amount.setScale(2, java.math.RoundingMode.HALF_UP);
+        this.amount = amount.setScale(2, RoundingMode.HALF_UP);
         this.currency = currency != null ? currency : DEFAULT_CURRENCY;
     }
 
