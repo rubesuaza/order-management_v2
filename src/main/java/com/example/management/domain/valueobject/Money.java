@@ -60,7 +60,7 @@ public final class Money {
     private void requireSameCurrency(Money other) {
         if (!this.currency.equals(other.currency)) {
             throw new CurrencyMismatchException(
-                    "Currency mismatch: " + this.currency + " vs " + other.currency);
+                    "currency mismatch: " + this.currency + " vs " + other.currency);
         }
     }
 

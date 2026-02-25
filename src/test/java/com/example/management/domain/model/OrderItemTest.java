@@ -46,9 +46,10 @@ class OrderItemTest {
 
         @Test
         void rejectsNegativeUnitPrice() {
+            // Money constructor throws IllegalArgumentException for negative amount before OrderItem runs
             assertThatThrownBy(() -> new OrderItem(PRODUCT_ID, 1, new Money(new BigDecimal("-0.01"))))
-                    .isInstanceOf(InvalidItemException.class)
-                    .hasMessageContaining("price");
+                    .isInstanceOf(IllegalArgumentException.class)
+                    .hasMessageContaining("Amount");
         }
 
         @Test

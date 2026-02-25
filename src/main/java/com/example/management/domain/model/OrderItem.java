@@ -20,7 +20,7 @@ public class OrderItem {
             throw new IllegalArgumentException("ProductId is required");
         }
         if (quantity <= 0) {
-            throw new InvalidItemException("Quantity must be strictly greater than zero");
+            throw new InvalidItemException("quantity must be strictly greater than zero");
         }
         if (unitPrice == null || unitPrice.getAmount().compareTo(java.math.BigDecimal.ZERO) < 0) {
             throw new InvalidItemException("Unit price cannot be negative");

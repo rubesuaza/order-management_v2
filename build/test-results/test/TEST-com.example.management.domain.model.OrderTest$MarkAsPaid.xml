@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="mark as paid" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-25T21:46:42" hostname="RubenS" time="0.018">
+<testsuite name="mark as paid" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-25T22:03:36" hostname="RubenS" time="0.031">
   <properties/>
-  <testcase name="rejectsPaidWhenNotPending()" classname="com.example.management.domain.model.OrderTest$MarkAsPaid" time="0.004"/>
-  <testcase name="allowsPaidWhenTotalAtLeast10Usd()" classname="com.example.management.domain.model.OrderTest$MarkAsPaid" time="0.003"/>
-  <testcase name="rejectsPaidWhenTotalLessThan10Usd()" classname="com.example.management.domain.model.OrderTest$MarkAsPaid" time="0.004"/>
+  <testcase name="rejectsPaidWhenNotPending()" classname="com.example.management.domain.model.OrderTest$MarkAsPaid" time="0.005"/>
+  <testcase name="allowsPaidWhenTotalAtLeast10Usd()" classname="com.example.management.domain.model.OrderTest$MarkAsPaid" time="0.008"/>
+  <testcase name="rejectsPaidWhenTotalLessThan10Usd()" classname="com.example.management.domain.model.OrderTest$MarkAsPaid" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
