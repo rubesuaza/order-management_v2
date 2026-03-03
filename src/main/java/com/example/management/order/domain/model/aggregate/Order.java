@@ -32,6 +32,12 @@ public class Order {
         return new Order(id, items);
     }
 
+    public static Order restore(OrderId id, List<OrderItem> items, OrderStatus status) {
+        Order order = new Order(id, items);
+        order.status = Objects.requireNonNull(status, "status must not be null");
+        return order;
+    }
+
     public void addItem(OrderItem item) {
         Objects.requireNonNull(item, "item must not be null");
         if (!items.isEmpty() && !item.getUnitPrice().currency().equals(totalAmount.currency())) {

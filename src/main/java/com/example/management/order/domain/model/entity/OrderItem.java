@@ -15,7 +15,11 @@ public class OrderItem {
     private final Money unitPrice;
 
     public OrderItem(String productId, int quantity, Money unitPrice) {
-        this.id = UUID.randomUUID();
+        this(UUID.randomUUID(), productId, quantity, unitPrice);
+    }
+
+    private OrderItem(UUID id, String productId, int quantity, Money unitPrice) {
+        this.id = Objects.requireNonNull(id, "id must not be null");
         this.productId = Objects.requireNonNull(productId, "productId must not be null");
         this.unitPrice = Objects.requireNonNull(unitPrice, "unitPrice must not be null");
 
@@ -27,6 +31,10 @@ public class OrderItem {
         }
 
         this.quantity = quantity;
+    }
+
+    public static OrderItem of(UUID id, String productId, int quantity, Money unitPrice) {
+        return new OrderItem(id, productId, quantity, unitPrice);
     }
 
     public UUID getId() {
