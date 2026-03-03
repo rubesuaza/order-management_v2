@@ -23,6 +23,10 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public UUID getId() {
         return id;
     }
@@ -41,6 +45,41 @@ public class OrderItem {
 
     public Money getSubTotal() {
         return unitPrice.multiply(quantity);
+    }
+
+    public static final class Builder {
+        private UUID id;
+        private UUID productId;
+        private int quantity;
+        private Money unitPrice;
+
+        private Builder() {
+        }
+
+        public Builder id(UUID id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder productId(UUID productId) {
+            this.productId = productId;
+            return this;
+        }
+
+        public Builder quantity(int quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        public Builder unitPrice(Money unitPrice) {
+            this.unitPrice = unitPrice;
+            return this;
+        }
+
+        public OrderItem build() {
+            UUID effectiveId = this.id != null ? this.id : UUID.randomUUID();
+            return new OrderItem(effectiveId, productId, quantity, unitPrice);
+        }
     }
 }
 

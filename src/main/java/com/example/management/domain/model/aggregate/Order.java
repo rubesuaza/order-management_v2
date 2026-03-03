@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
+import static java.util.Objects.requireNonNull;
+
 public class Order {
 
     private final OrderId orderId;
@@ -21,11 +23,11 @@ public class Order {
     private Money totalAmount;
 
     public Order(OrderId orderId, UUID customerId, List<OrderItem> items, Money totalAmount, OrderStatus status) {
-        this.orderId = orderId;
-        this.customerId = customerId;
-        this.items = new ArrayList<>(items);
-        this.totalAmount = totalAmount;
-        this.status = status;
+        this.orderId = requireNonNull(orderId, "orderId must not be null");
+        this.customerId = requireNonNull(customerId, "customerId must not be null");
+        this.items = new ArrayList<>(requireNonNull(items, "items must not be null"));
+        this.totalAmount = requireNonNull(totalAmount, "totalAmount must not be null");
+        this.status = requireNonNull(status, "status must not be null");
         recalculateTotal();
     }
 
@@ -42,6 +44,10 @@ public class Order {
         );
         newOrder.ensureMinimumTotal();
         return newOrder;
+    }
+
+    public static Builder builder() {
+        return new Builder();
     }
 
     public void pay() {
@@ -70,11 +76,10 @@ public class Order {
             this.totalAmount = Money.zero(totalAmount != null ? totalAmount.getCurrency() : "USD");
             return;
         }
-        Money runningTotal = Money.zero(items.get(0).getUnitPrice().getCurrency());
-        for (OrderItem item : items) {
-            runningTotal = runningTotal.add(item.getSubTotal());
-        }
-        this.totalAmount = runningTotal;
+        String currency = items.get(0).getUnitPrice().getCurrency();
+        this.totalAmount = items.stream()
+                .map(OrderItem::getSubTotal)
+                .reduce(Money.zero(currency), Money::add);
     }
 
     private void ensureMinimumTotal() {
@@ -102,6 +107,53 @@ public class Order {
 
     public Money getTotalAmount() {
         return totalAmount;
+    }
+
+    public static final class Builder {
+        private OrderId orderId;
+        private UUID customerId;
+        private List<OrderItem> items = new ArrayList<>();
+        private Money totalAmount;
+        private OrderStatus status = OrderStatus.PENDING;
+
+        private Builder() {
+        }
+
+        public Builder orderId(OrderId orderId) {
+            this.orderId = orderId;
+            return this;
+        }
+
+        public Builder customerId(UUID customerId) {
+            this.customerId = customerId;
+            return this;
+        }
+
+        public Builder items(List<OrderItem> items) {
+            this.items = new ArrayList<>(items);
+            return this;
+        }
+
+        public Builder totalAmount(Money totalAmount) {
+            this.totalAmount = totalAmount;
+            return this;
+        }
+
+        public Builder status(OrderStatus status) {
+            this.status = status;
+            return this;
+        }
+
+        public Order build() {
+            OrderId effectiveOrderId = this.orderId != null ? this.orderId : OrderId.newId();
+            Money effectiveTotal = this.totalAmount != null
+                    ? this.totalAmount
+                    : (items.isEmpty()
+                    ? Money.zero("USD")
+                    : Money.zero(items.get(0).getUnitPrice().getCurrency()));
+
+            return new Order(effectiveOrderId, customerId, items, effectiveTotal, status);
+        }
     }
 }
 
