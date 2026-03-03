@@ -16,6 +16,9 @@ import java.util.UUID;
 
 public class Order {
 
+    private static final String SUPPORTED_CURRENCY = "USD";
+    private static final Money MINIMUM_TOTAL_PLACEMENT = Money.of(new BigDecimal("10.00"), SUPPORTED_CURRENCY);
+
     private final OrderId id;
     private final List<OrderItem> items;
     private Money totalAmount;
@@ -83,31 +86,24 @@ public class Order {
     }
 
     private void enforceMinimumTotalForPlacement() {
-        if (!"USD".equals(totalAmount.currency())) {
+        if (!SUPPORTED_CURRENCY.equals(totalAmount.currency())) {
             throw new InvalidOrderStateException("Order placement only supported for USD currency");
         }
-        if (totalAmount.amount().compareTo(new BigDecimal("10.00")) < 0) {
+        if (totalAmount.isLessThan(MINIMUM_TOTAL_PLACEMENT)) {
             throw new InvalidOrderStateException("Order total must be at least 10.00 USD to place");
         }
     }
 
     private void recalculateTotal() {
         if (items.isEmpty()) {
-            this.totalAmount = Money.of(BigDecimal.ZERO, "USD");
+            this.totalAmount = Money.of(BigDecimal.ZERO, SUPPORTED_CURRENCY);
             return;
         }
 
         String currency = items.getFirst().getUnitPrice().currency();
-        Money sum = Money.of(BigDecimal.ZERO, currency);
-
-        for (OrderItem item : items) {
-            if (!item.getUnitPrice().currency().equals(currency)) {
-                throw new CurrencyMismatchException("All order items must have the same currency");
-            }
-            sum = sum.add(item.getSubtotal());
-        }
-
-        this.totalAmount = sum;
+        this.totalAmount = items.stream()
+                .map(OrderItem::getSubtotal)
+                .reduce(Money.of(BigDecimal.ZERO, currency), Money::add);
     }
 
     public OrderId getId() {

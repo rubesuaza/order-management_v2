@@ -34,6 +34,11 @@ public final class Money {
         return new Money(this.amount.multiply(factor), this.currency);
     }
 
+    public boolean isLessThan(Money other) {
+        ensureSameCurrency(other);
+        return this.amount.compareTo(other.amount) < 0;
+    }
+
     private void ensureSameCurrency(Money other) {
         if (!this.currency.equals(other.currency)) {
             throw new CurrencyMismatchException(
